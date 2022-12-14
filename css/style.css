@@ -367,7 +367,7 @@ button {
   transform: none;
 }
 .simplebar-offset {
-  padding: 40px;
+  padding: 38px;
 }
 .dropdown__content {
   background: rgba(0, 0, 0, 0.6);
@@ -388,6 +388,7 @@ button {
   font-size: 14px;
   line-height: 19px;
   padding-left: 14px;
+  margin: 2px;
 }
 
 .dropdown__link:not(:last-child) {
@@ -426,13 +427,12 @@ button {
   width: 597px;
   font-weight: 700;
   font-size: 72px;
-  line-height: 86px;
+  line-height: 95px;
   color: #ffffff;
-  margin-bottom: 17px;
 }
 
 .hero__descr {
-  width: 579px;
+  width: 550px;
   min-height: 90px;
   font-weight: 700;
   font-size: 18px;
@@ -582,7 +582,7 @@ button {
 }
 
 .about__descr {
-  width: 1088px;
+  width: 1080px;
   min-height: 214px;
   font-weight: 400;
   font-size: 16px;
@@ -905,7 +905,7 @@ button {
   font-size: 24.5px;
   line-height: 25px;
   color: #333333;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
 }
 
 .left__descr {
@@ -913,6 +913,14 @@ button {
   font-size: 16px;
   line-height: 32px;
   color: black;
+}
+
+.left__small {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #999999;
+  margin-bottom: -3px;
 }
 
 .catalog__link {
@@ -979,7 +987,7 @@ button {
   position: absolute;
   right: 0;
   top: 48%;
-  width: 47px;
+  width: 45px;
   height: 45px;
   margin-top: -23px;
   transition: transform 0.3s ease;
@@ -1061,7 +1069,7 @@ button {
 }
 
 .event__swiper {
-  width: 1606px;
+  width: 1610px;
   min-height: 700px;
   padding-top: 0;
 }
@@ -1108,7 +1116,7 @@ button {
   justify-content: end;
   position: absolute;
   width: 1626px;
-  margin-top: -372px;
+  margin-top: -374px;
   z-index: 20;
 }
 
@@ -1125,12 +1133,12 @@ button {
 .events__title2 {
   font-weight: 600;
   font-size: 24.5px;
-  line-height: 33.68px;
+  line-height: 32.68px;
   color: #333333;
-  margin-bottom: 2px;
+  margin-bottom: 9px;
 }
 .events__child5 {
-  margin-bottom: 7px;
+  margin-bottom: 9px;
 }
 .events__child6 {
   margin-bottom: 8px;
@@ -1230,7 +1238,7 @@ button {
   position: absolute;
   width: 1600px;
   min-height: 30px;
-  margin-top: -173px;
+  margin-top: -170px;
 }
 
 .project-button-prev,
@@ -1277,7 +1285,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 155px;
+  height: 152px;
   border: 1px solid #cacaca;
 }
 
@@ -1288,7 +1296,7 @@ button {
 .map__title {
   font-weight: 600;
   font-size: 24.5px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   line-height: 18px;
   color: #333333;
 }
@@ -1362,7 +1370,7 @@ button {
   margin-right: 160px;
 }
 .messager {
-  padding-top: 8px;
+  padding-top: 9px;
 }
 
 .whatsapp {
@@ -1397,22 +1405,24 @@ button {
   height: 140px;
 }
 
-.logo {
+/* .logo {
   display: flex;
   justify-content: space-between;
-  width: 175px;
-}
 
-.mess-logo {
+} */
+.mess__logo:first-child {
+  margin-right: 16px;
+}
+.mess__logo {
   transition: fill 0.2s ease-in-out;
 }
 
-.mess-logo path:focus,
-.mess-logo path:hover {
+.mess__logo path:focus,
+.mess__logo path:hover {
   fill: #ffffff;
 }
 
-.mess-logo path:active {
+.mess__logo path:active {
   fill: #9d5cd0;
 }
 
@@ -1800,7 +1810,7 @@ button {
   .logo {
     width: 240px;
   }
-  .mess-logo {
+  .mess__logo {
     width: 60px;
     height: 60px;
   }
@@ -2511,7 +2521,7 @@ button {
   #map {
     height: 320px;
   }
-  .mess-logo {
+  .mess__logo {
     width: 50px;
     height: 50px;
   }

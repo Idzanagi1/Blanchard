@@ -80,7 +80,7 @@ var swiper = new Swiper(".event__swiper", {
 
     breakpoints: {
         1920: {
-            spaceBetween: 39
+            spaceBetween: 40
         },
         1024: {
             slidesPerView: 3,
