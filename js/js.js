@@ -108,7 +108,7 @@ document.querySelectorAll(".dropbtn").forEach((item) => {
 
 document.addEventListener("click", function (e) {
   let target = e.target;
-  if (!target.closest(".navigation__link")) {
+  if (!target.closest(".navigation-bottom__link")) {
     document.querySelectorAll(".dropdown").forEach((el) => {
       el.classList.remove("active-dropdown");
     });

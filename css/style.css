@@ -81,7 +81,7 @@ button {
 }
 
 .container {
-  width: 1601px;
+  max-width: 1601px;
   margin: 0 auto;
 }
 
@@ -266,14 +266,14 @@ button {
   visibility: visible;
 }
 
-.navigation__bottom {
+.navigation-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 70px;
 }
 
-.navigation__bottom::after {
+.navigation-bottom::after {
   content: '';
   display: block;
   position: absolute;
@@ -285,17 +285,16 @@ button {
   z-index: 1;
 }
 
-.navigation__link {
-  margin-right: 96px;
+.navigation-bottom__link {
   position: relative;
   z-index: 3;
 }
 
-.navigation__link:last-child {
+.navigation-bottom__link:last-child {
   margin: 0;
 }
 
-.navigation__input {
+.navigation-bottom__input {
   font-size: 18px;
   line-height: 25px;
   padding: 0;
@@ -306,34 +305,35 @@ button {
   color: #fff;
 }
 
-.navigation__input:focus,
-.navigation__input:hover {
+.navigation-bottom__input:focus,
+.navigation-bottom__input:hover {
   border-bottom: 1px solid #c283f3;
 }
 
-.navigation__input:active {
+.navigation-bottom__input:active {
   border-bottom: 1px solid #7943a4;
 }
 
-.navigation__input::placeholder {
+.navigation-bottom__input::placeholder {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.navigation__list {
+.navigation-bottom__list {
   display: flex;
   font-size: 18px;
   line-height: 25px;
+  gap: 96px;
   color: #ffffff;
 }
 
-.navigation__search {
+.navigation-bottom__search {
   display: flex;
   align-items: center;
   width: 250px;
   z-index: 30;
 }
 
-.navigation__button {
+.navigation-bottom__button {
   padding-top: 8px;
   margin-right: 6px;
 }
@@ -444,7 +444,7 @@ button {
 }
 
 .hero__title {
-  width: 597px;
+  max-width: 597px;
   font-weight: 700;
   font-size: 72px;
   line-height: 95px;
@@ -452,7 +452,7 @@ button {
 }
 
 .hero__descr {
-  width: 550px;
+  max-width: 550px;
   min-height: 90px;
   font-weight: 700;
   font-size: 18px;
@@ -603,7 +603,7 @@ button {
 }
 
 .about__descr {
-  width: 1080px;
+  max-width: 1080px;
   min-height: 214px;
   font-weight: 400;
   font-size: 16px;
@@ -701,21 +701,21 @@ button {
   color: #ffffff;
 }
 
-.custom__checkbox {
+.checkbox__custom {
   position: relative;
   padding-left: 23px;
   cursor: pointer;
 }
 
-.custom__checkbox:focus span,
-.custom__checkbox:hover span,
-.custom__checkbox:active span {
+.checkbox__custom:focus span,
+.checkbox__custom:hover span,
+.checkbox__custom:active span {
   border: 1px solid #c283f3;
 }
 
-.custom__checkbox:focus,
-.custom__checkbox:hover,
-.custom__checkbox:active {
+.checkbox__custom:focus,
+.checkbox__custom:hover,
+.checkbox__custom:active {
   color: #c283f3;
 }
 
@@ -821,7 +821,7 @@ button {
   background-repeat: no-repeat;
 }
 
-.swiper__btn {
+.galery__btn {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -892,7 +892,7 @@ button {
 }
 
 .catalog__descr {
-  width: 1080px;
+  max-width: 1080px;
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
@@ -927,14 +927,14 @@ button {
   margin-bottom: 10px;
 }
 
-.left__descr {
+.tabs-item__descr {
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
   color: black;
 }
 
-.left__small {
+.tabs-item__small {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -1041,7 +1041,7 @@ button {
   border-radius: 100%;
 }
 
-.tabs__btn {
+.accordion__btn {
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
@@ -1049,18 +1049,18 @@ button {
   flex-grow: 0;
 }
 
-.tabs__btn:focus {
+.accordion__btn:focus {
   color: white;
   background: #9d5cd0;
 }
 
-.tabs__btn:hover {
+.accordion__btn:hover {
   background: inherit;
   color: #9d5cd0;
   border-bottom: 1px solid #9d5cd0;
 }
 
-.tabs__btn:active {
+.accordion__btn:active {
   border: none;
 }
 
@@ -1096,7 +1096,7 @@ button {
   margin-bottom: 80px;
 }
 
-.event__swiper {
+.events__swiper {
   width: 1610px;
   min-height: 700px;
   padding-top: 0;
@@ -1223,7 +1223,7 @@ button {
 }
 
 .project__text {
-  width: 1080px;
+  max-width: 1080px;
   min-height: 246px;
   font-weight: 400;
   font-size: 16.03px;
@@ -1251,14 +1251,14 @@ button {
   border-bottom: 1px solid #7943a4;
 }
 
-.partners__title {
+.partners-title {
   font-weight: 600;
   font-size: 24.5px;
   line-height: 32px;
 }
 
 .project__swiper {
-  width: 1450px;
+  max-width: 1450px;
   padding-top: 23px;
   height: 153px;
   margin-bottom: 78px;
@@ -1439,20 +1439,20 @@ button {
   height: 140px;
 }
 
-.mess__logo:first-child {
+.logo__mess:first-child {
   margin-right: 16px;
 }
 
-.mess__logo {
+.logo__mess {
   transition: fill 0.2s ease-in-out;
 }
 
-.mess__logo path:focus,
-.mess__logo path:hover {
+.logo__mess path:focus,
+.logo__mess path:hover {
   fill: #ffffff;
 }
 
-.mess__logo path:active {
+.logo__mess path:active {
   fill: #9d5cd0;
 }
 
@@ -1475,7 +1475,7 @@ button {
     display: none;
   }
 
-  .tabs__btn-visible {
+  .accordion__btn-visible {
     display: none;
   }
 
@@ -1483,7 +1483,7 @@ button {
     display: none;
   }
 
-  .tabs__btn-320-visible {
+  .accordion__btn-320-visible {
     display: none;
   }
 
@@ -1498,7 +1498,7 @@ button {
 
 @media (max-width: 1024px) {
   .container {
-    width: 925px;
+    max-width: 925px;
     margin: 0 auto;
   }
 
@@ -1559,7 +1559,7 @@ button {
     margin-bottom: 198px;
   }
 
-  .burger__btn {
+  .header__btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1571,11 +1571,11 @@ button {
     border-radius: 100px;
   }
 
-  .burger__btn svg {
+  .header__btn svg {
     margin-right: 7px;
   }
 
-  .navigation__bottom {
+  .navigation-bottom {
     display: none;
   }
 
@@ -1606,7 +1606,7 @@ button {
   }
 
   .hero__descr {
-    width: 656px;
+    max-width: 656px;
     line-height: 30px;
     margin-bottom: 103px;
   }
@@ -1626,7 +1626,7 @@ button {
   }
 
   .about__descr {
-    width: 925px;
+    max-width: 925px;
     min-height: 246px;
   }
 
@@ -1702,7 +1702,7 @@ button {
   }
 
   .swiper {
-    width: 595px;
+    max-width: 595px;
     height: auto;
   }
 
@@ -1715,7 +1715,7 @@ button {
   }
 
   .catalog__descr {
-    width: 925px;
+    max-width: 925px;
     line-height: 32px;
     min-height: 117px;
     margin-bottom: 39px;
@@ -1725,11 +1725,11 @@ button {
     width: 436px;
   }
 
-  .left__descr {
+  .tabs-item__descr {
     line-height: 32px;
   }
 
-  .left__small {
+  .tabs-item__small {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
@@ -1793,7 +1793,7 @@ button {
     display: none;
   }
 
-  .event__swiper {
+  .events__swiper {
     height: 750px;
     width: 925px;
   }
@@ -1862,7 +1862,7 @@ button {
   }
 
   .project__swiper {
-    width: 818px;
+    max-width: 818px;
     height: 129px;
   }
 
@@ -1871,7 +1871,7 @@ button {
   }
 
   .project__text {
-    width: 925px;
+    max-width: 925px;
     min-height: 278px;
   }
 
@@ -1879,12 +1879,12 @@ button {
     display: none;
   }
 
-  .partners__title {
+  .partners-title {
     font-size: 24.5px;
   }
 
   .map__top {
-    width: 1024px;
+    max-width: 1024px;
     flex-direction: column;
     align-items: flex-start;
     height: 285px;
@@ -1928,13 +1928,13 @@ button {
   }
 
   .map__form {
-    width: 923px;
+    max-width: 923px;
     min-height: 50px;
     padding-left: 50px;
     margin-bottom: 30px;
   }
 
-  .mess__logo {
+  .logo__mess {
     width: 60px;
     height: 60px;
   }
@@ -1942,12 +1942,12 @@ button {
 
 @media (max-width: 768px) {
   .container {
-    width: 669px;
+    max-width: 669px;
     margin: 0 auto;
   }
 
   .nav-active {
-    width: 718px;
+    max-width: 718px;
     min-height: 1233px;
   }
 
@@ -1956,7 +1956,6 @@ button {
   }
 
   .hero {
-    width: 768px;
     min-height: 558px;
   }
 
@@ -1991,7 +1990,7 @@ button {
   }
 
   .about__descr {
-    width: 666px;
+    max-width: 666px;
     min-height: 342px;
   }
 
@@ -2011,7 +2010,6 @@ button {
   }
 
   .galery {
-    width: 768px;
     min-height: 889px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2030,7 +2028,7 @@ button {
   }
 
   .swiper {
-    width: 672px;
+    max-width: 672px;
     padding-top: 100px;
   }
 
@@ -2047,7 +2045,7 @@ button {
     bottom: 30px;
   }
 
-  .swiper__btn {
+  .galery__btn {
     padding-top: 21px;
   }
 
@@ -2065,7 +2063,7 @@ button {
   }
 
   .catalog__descr {
-    width: 669px;
+    max-width: 669px;
     min-height: 182px;
     margin-bottom: 20px;
   }
@@ -2080,7 +2078,7 @@ button {
     width: 669.5px;
   }
 
-  .left__descr {
+  .tabs-item__descr {
     font-size: 16.1px;
     line-height: 32px;
   }
@@ -2109,6 +2107,7 @@ button {
   }
 
   .catalog {
+    max-width: 425px;
     margin-bottom: 0;
   }
 
@@ -2150,7 +2149,7 @@ button {
     padding: 0 15px;
   }
 
-  .event__swiper {
+  .events__swiper {
     padding-top: 0;
   }
 
@@ -2180,7 +2179,7 @@ button {
   }
 
   .project__swiper {
-    width: 561px;
+    max-width: 561px;
     padding-top: 29px;
     margin-bottom: 57px;
   }
@@ -2191,7 +2190,7 @@ button {
   }
 
   .project__text {
-    width: 657.51px;
+    max-width: 657.51px;
     min-height: 414px;
     margin-bottom: 29px;
   }
@@ -2205,14 +2204,14 @@ button {
   }
 
   .map__top {
-    width: 768px;
+    max-width: 768px;
     height: 354px;
     padding-top: 49px;
   }
 
   .map__form {
     flex-wrap: wrap;
-    width: 668px;
+    max-width: 668px;
     min-height: 112px;
     margin-bottom: 28px;
   }
@@ -2247,14 +2246,14 @@ button {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 425px) {
   .container {
-    width: 290px;
+    max-width: 290px;
     margin: 0 auto;
   }
 
   .navigation {
-    width: 320px;
+    max-width: 425px;
     height: 45px;
   }
 
@@ -2285,13 +2284,13 @@ button {
     margin-bottom: 54px;
   }
 
-  .burger__btn {
+  .header__btn {
     width: 115px;
     height: 40px;
     font-size: 11px;
   }
 
-  .burger__btn svg {
+  .header__btn svg {
     width: 10px;
     height: 10px;
   }
@@ -2401,14 +2400,14 @@ button {
   }
 
   .hero {
-    width: 320px;
+    max-width: 425px;
     min-height: 277px;
     margin-bottom: 50px;
     padding-top: 33px;
   }
 
   .hero__title {
-    width: 290px;
+    max-width: 290px;
     min-height: 73px;
     font-size: 32px;
     line-height: 38px;
@@ -2436,6 +2435,7 @@ button {
   }
 
   .about {
+    max-width: 425px;
     margin-bottom: 0;
   }
 
@@ -2454,7 +2454,7 @@ button {
   }
 
   .galery {
-    width: 320px;
+    max-width: 425px;
     min-height: 800px;
     margin-bottom: 50px;
   }
@@ -2522,7 +2522,7 @@ button {
     width: 114px;
   }
 
-  .swiper__btn {
+  .galery__btn {
     padding-top: 132px;
     min-height: 35px;
   }
@@ -2607,7 +2607,7 @@ button {
     min-height: 30px;
   }
 
-  .left__descr {
+  .tabs-item__descr {
     width: 289px;
     line-height: 32px;
   }
@@ -2633,6 +2633,7 @@ button {
   }
 
   .events {
+    max-width: 425px;
     margin-bottom: 10px;
   }
 
@@ -2676,7 +2677,7 @@ button {
     padding-right: 16px;
   }
 
-  .event__swiper {
+  .events__swiper {
     width: 294px;
   }
 
@@ -2688,7 +2689,8 @@ button {
     padding-left: 87px;
   }
 
-  .Project {
+  .project {
+    max-width: 425px;
     margin-bottom: 50px;
   }
 
@@ -2710,12 +2712,12 @@ button {
     margin-bottom: 10px;
   }
 
-  .partners__title {
+  .partners-title {
     font-size: 18.3px;
   }
 
   .project__swiper {
-    width: 195px;
+    max-width: 195px;
     height: 100px;
     padding-top: 10px;
     margin-bottom: -54px;
@@ -2727,7 +2729,7 @@ button {
   }
 
   .map__top {
-    width: 360px;
+    max-width: 425px;
     height: 347px;
     border: none;
     padding-top: 16px;
@@ -2747,7 +2749,7 @@ button {
   }
 
   .map__form {
-    width: 320px;
+    max-width: 320px;
     padding-left: 15px;
     margin-bottom: 30px;
   }
@@ -2800,14 +2802,9 @@ button {
     height: 320px;
   }
 
-  .mess__logo {
+  .logo__mess {
     width: 50px;
     height: 50px;
-  }
-
-  .footer {
-    width: 320px;
-    height: 132px;
   }
 
   .footer__content {

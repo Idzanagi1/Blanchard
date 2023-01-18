@@ -72,7 +72,7 @@ var swiper = new Swiper(".project__swiper", {
     },
 });
 
-var swiper = new Swiper(".event__swiper", {
+var swiper = new Swiper(".events__swiper", {
     direction: 'horizontal',
     loop: true,
     slidesPerView: 3,
