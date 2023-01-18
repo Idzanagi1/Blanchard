@@ -38,7 +38,7 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-var swiper = new Swiper(".projectSwiper", {
+var swiper = new Swiper(".project__swiper", {
     direction: 'horizontal',
     loop: true,
     slidesPerView: 3,
@@ -58,6 +58,7 @@ var swiper = new Swiper(".projectSwiper", {
         768: {
             slidesPerView: 2,
             slidesPerGroup: 2,
+            spaceBetween: 36,
         },
         320: {
             slidesPerView: 1,

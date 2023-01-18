@@ -273,7 +273,8 @@
 @media (min-width:640px) {
     .choices__list--dropdown .choices__item--selectable,
     .choices__list[aria-expanded] .choices__item--selectable {
-        padding-right: 100px
+        padding-right: 100px;
+        padding-left: 16px;
     }
     .choices__list--dropdown .choices__item--selectable::after,
     .choices__list[aria-expanded] .choices__item--selectable::after {
@@ -300,7 +301,7 @@
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted,
 .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
-    background-color: #f2f2f2
+    background-color: inherit
 }
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted::after,
