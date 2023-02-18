@@ -81,7 +81,7 @@ button {
 }
 
 .container {
-  max-width: 1601px;
+  max-width: 83.4%;
   margin: 0 auto;
 }
 
@@ -234,8 +234,9 @@ button {
   width: 314px;
   min-height: 36px;
   z-index: 2;
-  top: 13%;
-  transform: translateX(30%);
+  top: 6%;
+  right: 50px;
+  transform: translateY(-100px);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
   visibility: hidden;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out 0.2s,
@@ -262,7 +263,7 @@ button {
 
 .form__active {
   width: 305px;
-  transform: translateX(-90%);
+  transform: translateY(0);
   visibility: visible;
 }
 
@@ -413,7 +414,7 @@ button {
   margin: 2px;
 }
 
-.dropdown__link:not(:last-child) {
+.dropdown-list:not(:last-child) {
   margin-bottom: 20px;
 }
 
@@ -766,6 +767,7 @@ button {
   flex-direction: column;
   height: auto;
   width: 348px;
+  cursor: pointer;
   margin-right: 47px;
   font-size: 18px;
   background: #fff;
@@ -784,6 +786,7 @@ button {
   content: '';
   position: absolute;
   text-align: center;
+  cursor: pointer;
   left: 25px;
   right: 25px;
   bottom: 25px;
@@ -1045,6 +1048,7 @@ button {
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
+  cursor: pointer;
   order: 0;
   flex-grow: 0;
 }
@@ -1498,7 +1502,7 @@ button {
 
 @media (max-width: 1024px) {
   .container {
-    max-width: 925px;
+    max-width: 90%;
     margin: 0 auto;
   }
 
@@ -1795,7 +1799,7 @@ button {
 
   .events__swiper {
     height: 750px;
-    width: 925px;
+    max-width: 925px;
   }
 
   .events__link {
@@ -1942,7 +1946,7 @@ button {
 
 @media (max-width: 768px) {
   .container {
-    max-width: 669px;
+    max-width: 87.5%;
     margin: 0 auto;
   }
 
@@ -1994,9 +1998,13 @@ button {
     min-height: 342px;
   }
 
+  .form {
+    width: 668px;
+    height: 100px;
+  }
+
   .form__active {
     top: 0px;
-    right: -570px;
     width: 668px;
     height: 100px;
     background-color: #000000;
@@ -2107,7 +2115,6 @@ button {
   }
 
   .catalog {
-    max-width: 425px;
     margin-bottom: 0;
   }
 
@@ -2295,9 +2302,15 @@ button {
     height: 10px;
   }
 
+  .form {
+    width: 320px;
+    height: 75px;
+    right: 0;
+  }
+
   .form__active {
     top: 0px;
-    right: -290px;
+    right: 0px;
     width: 322px;
     height: 75px;
     background: rgba(0, 0, 0, 0.9);
@@ -2403,27 +2416,27 @@ button {
     max-width: 425px;
     min-height: 277px;
     margin-bottom: 50px;
-    padding-top: 33px;
+    padding-top: 31px;
   }
 
   .hero__title {
     max-width: 290px;
     min-height: 73px;
     font-size: 32px;
-    line-height: 38px;
+    line-height: 43px;
     text-align: center;
-    margin-bottom: 11px;
+    margin-bottom: 4px;
   }
 
   .hero__descr {
     font-weight: 400;
-    width: 277px;
-    height: 86px;
+    max-width: 246px;
+    height: 67px;
     text-align: center;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 15.5px;
     margin-bottom: 15px;
-    padding-left: 7px;
+    padding-left: 23px;
   }
 
   .hero__btn {
@@ -2468,6 +2481,11 @@ button {
 
   .galery__span {
     margin-bottom: 5px;
+  }
+
+  .swiper-pagination {
+    bottom: 13px;
+    left: -2px;
   }
 
   .swiper-button-next,
@@ -2599,7 +2617,7 @@ button {
     width: 90px;
     min-height: 118px;
     outline-offset: 5px;
-    margin-right: 20px;
+    margin-right: 0px;
   }
 
   .accordion__btn {
@@ -2624,6 +2642,7 @@ button {
     word-spacing: 0;
     font-size: 24.5px;
     line-height: 33px;
+    margin-bottom: 8px;
   }
 
   .catalog__descr2 {
