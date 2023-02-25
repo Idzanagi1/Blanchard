@@ -1530,7 +1530,7 @@ button {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 974px;
+    width: 100%;
     min-height: 1281px;
     padding-left: 50px;
     background: rgba(0, 0, 0, 0.9);
@@ -1951,7 +1951,6 @@ button {
   }
 
   .nav-active {
-    max-width: 718px;
     min-height: 1233px;
   }
 
@@ -2265,7 +2264,6 @@ button {
   }
 
   .nav-active {
-    width: 300px;
     min-height: 468px;
     padding-left: 15px;
   }

@@ -86,7 +86,7 @@ var swiper = new Swiper(".events__swiper", {
         1024: {
             slidesPerView: 3,
             slidesPerGroup: 3,
-            spaceBetween: 28
+            spaceBetween: 26
         },
         768: {
             slidesPerView: 2,
