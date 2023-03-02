@@ -62,6 +62,11 @@ img {
   width: 100%;
 }
 
+hr {
+  padding: 0;
+  margin: 0;
+}
+
 h1,
 h2,
 h3 {
@@ -200,6 +205,7 @@ button {
 
 .header__link:focus {
   background: #7943a4;
+  outline: none;
 }
 
 .header__link:hover,
@@ -350,6 +356,7 @@ button {
 
 .dropbtn:focus {
   background-color: #7943a4;
+  outline: none;
   color: white;
 }
 
@@ -770,7 +777,6 @@ button {
   cursor: pointer;
   margin-right: 47px;
   font-size: 18px;
-  background: #fff;
 }
 
 .swiper__img {
@@ -791,6 +797,7 @@ button {
   right: 25px;
   bottom: 25px;
   background-image: url('../img/hovergalery.png');
+  background-size: cover;
   opacity: 0;
   z-index: 100;
 }
@@ -942,7 +949,7 @@ button {
   font-size: 12px;
   line-height: 16px;
   color: #999999;
-  margin-bottom: -3px;
+  margin-bottom: 16px;
 }
 
 .catalog__link {
@@ -987,7 +994,6 @@ button {
 }
 
 .accordion__bottom {
-  display: inline-block;
   columns: auto;
   column-width: 194px;
   column-gap: 30px;
@@ -1315,6 +1321,9 @@ button {
 #map {
   width: 100%;
   height: 700px;
+}
+
+.ymaps-2-1-79-ground-pane {
   filter: grayscale(1);
 }
 
@@ -1323,11 +1332,6 @@ button {
   justify-content: space-between;
   align-items: center;
   height: 152px;
-  border: 1px solid #cacaca;
-}
-
-.map__descr {
-  padding-left: 160px;
 }
 
 .map__title {
@@ -1342,7 +1346,8 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 908px;
+  max-width: 908px;
+  gap: 20px;
 }
 
 .place {
@@ -1404,7 +1409,6 @@ button {
   font-weight: 600;
   font-size: 24.5px;
   line-height: 23px;
-  margin-right: 160px;
 }
 
 .messager {
@@ -1888,7 +1892,6 @@ button {
   }
 
   .map__top {
-    max-width: 1024px;
     flex-direction: column;
     align-items: flex-start;
     height: 285px;
@@ -1905,7 +1908,6 @@ button {
 
   .map__descr {
     line-height: 22px;
-    padding-left: 50px;
     margin-bottom: 20px;
   }
 
@@ -1924,7 +1926,6 @@ button {
   .map__span {
     width: 275px;
     min-height: 78px;
-    padding-left: 50px;
   }
 
   .whatsapp {
@@ -1934,7 +1935,6 @@ button {
   .map__form {
     max-width: 923px;
     min-height: 50px;
-    padding-left: 50px;
     margin-bottom: 30px;
   }
 
@@ -1946,7 +1946,7 @@ button {
 
 @media (max-width: 768px) {
   .container {
-    max-width: 87.5%;
+    max-width: 87%;
     margin: 0 auto;
   }
 
@@ -2022,6 +2022,10 @@ button {
     background-size: cover;
   }
 
+  .swiper-pagination {
+    bottom: -11px;
+    left: -2px;
+  }
   .galery__title {
     margin-bottom: 16px;
   }
@@ -2078,16 +2082,24 @@ button {
   .catalog__accordion {
     display: flex;
     flex-direction: column-reverse;
-    margin-bottom: 69px;
+    margin-bottom: 79px;
   }
 
   .catalog__left {
     width: 669.5px;
   }
 
+  .catalog__photo {
+    margin-bottom: 20px;
+  } 
+
   .tabs-item__descr {
-    font-size: 16.1px;
+    font-size: 16px;
     line-height: 32px;
+  }
+
+  .tabs-item__small {
+    margin-bottom: 6px;
   }
 
   .catalog__right {
@@ -2210,8 +2222,7 @@ button {
   }
 
   .map__top {
-    max-width: 768px;
-    height: 354px;
+    height: 347px;
     padding-top: 49px;
   }
 
@@ -2219,12 +2230,21 @@ button {
     flex-wrap: wrap;
     max-width: 668px;
     min-height: 112px;
+    gap: 0;
     margin-bottom: 28px;
   }
 
+  .map__descr {
+    margin-bottom: 15px;
+  }
+
+  .map__span {
+    line-height: 15px;
+  }
+
   .messager {
-    padding-top: 11px;
-    margin-bottom: 48px;
+    padding-top: 15px;
+    margin-bottom: 44px;
   }
 
   .place {
@@ -2270,6 +2290,10 @@ button {
 
   .header__list {
     padding-top: 154px;
+  }
+
+  .header__form {
+    width: 27px;
   }
 
   .header__link {
@@ -2412,9 +2436,10 @@ button {
 
   .hero {
     max-width: 425px;
-    min-height: 277px;
+    min-height: 279px;
     margin-bottom: 50px;
     padding-top: 31px;
+    text-align: -webkit-center;
   }
 
   .hero__title {
@@ -2434,7 +2459,6 @@ button {
     font-size: 12px;
     line-height: 15.5px;
     margin-bottom: 15px;
-    padding-left: 23px;
   }
 
   .hero__btn {
@@ -2442,7 +2466,6 @@ button {
     min-height: 40px;
     font-size: 12px;
     line-height: 16px;
-    margin-left: 47px;
   }
 
   .about {
@@ -2461,7 +2484,7 @@ button {
     min-height: 560px;
     font-size: 14px;
     line-height: 28px;
-    margin-bottom: 42px;
+    margin-bottom: 41px;
   }
 
   .galery {
@@ -2551,6 +2574,10 @@ button {
 
   .catalog__left {
     width: 290px;
+  }
+
+  .tabs-item__small {
+    margin-bottom: 15px;
   }
 
   .catalog__right {
@@ -2657,6 +2684,7 @@ button {
   .events__title {
     font-size: 28px;
     line-height: 38px;
+    margin-bottom: 13px;
   }
 
   .events__card {
@@ -2726,7 +2754,7 @@ button {
     min-height: 860px;
     font-size: 16px;
     line-height: 32px;
-    margin-bottom: 10px;
+    margin-bottom: 51px;
   }
 
   .partners-title {
@@ -2744,31 +2772,30 @@ button {
     width: 290px;
     margin-top: -28px;
   }
-
+  .map__border {
+    display: none;
+  }
   .map__top {
-    max-width: 425px;
-    height: 347px;
+    height: 354px;
     border: none;
-    padding-top: 16px;
+    padding-top: 23px;
   }
 
   .map__title {
     font-size: 18px;
-    margin-bottom: 4px;
+    margin-bottom: 9px;
   }
 
   .map__descr {
     font-size: 14px;
     line-height: 18px;
     margin: 0;
-    padding-left: 15px;
-    margin-bottom: 17px;
+    margin-bottom: 21px;
   }
 
   .map__form {
     max-width: 320px;
-    padding-left: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 33px;
   }
 
   .place {
@@ -2798,11 +2825,11 @@ button {
     font-size: 17.5px;
     line-height: 30px;
     margin: 0;
-    padding-left: 15px;
   }
 
   .messager {
     margin-bottom: 20px;
+    padding-top: 7px;
   }
 
   .whatsapp {
@@ -2834,6 +2861,6 @@ button {
     display: flex;
     justify-content: center;
     padding-top: 0;
-    padding-top: 20px;
+    padding-top: 16px;
   }
 }
