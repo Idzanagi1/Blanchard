@@ -110,3 +110,17 @@ var swiper = new Swiper(".events__swiper", {
     },
 
 });
+
+var swiper = new Swiper(".js-hero-swiper", {
+    allowTouchMove: false,
+    loop: true,
+    effect: 'fade',
+    speed: 10000,
+    autoplay: {
+        delay: 10000
+    },
+    pagination: {
+        el: ".hero__swiper-pagination",
+        type: "fraction",
+    },
+});
