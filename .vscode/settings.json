@@ -1,5 +1,6 @@
 {
     "attrsSorter.order": [
-        "class", "id", "href", "src", "data-.+", "aria-.+", 
-    ]
+        "class", "id", "href", "src", "data-.+", "aria-.+",
+    ],
+    "liveServer.settings.port": 5501
 }
