@@ -1,78 +1,85 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let galerySwiper = new Swiper(".swiper-container", {
+    let gallerySlider = new Swiper(".slides-container", {
+      slidesPerView: 1,
+      grid: {
+        rows: 1,
+        fill: "row"
+      },
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction"
+      },
+      navigation: {
+        nextEl: ".galery-button-next",
+        prevEl: ".galery-button-prev"
+      },
+
+      breakpoints: {
+        441: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        },
+
+        1400: {
+          slidesPerView: 3,
+          spaceBetween: 60
+        }
+      },
+
+      a11y: false,
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true
+      },
+
+      watchSlidesProgress: true,
+      watchSlidesVisibility: true,
+      slideVisibleClass: "slide-visible",
+
+      on: {
+        init: function () {
+          this.slides.forEach((slide) => {
+            if (!slide.classList.contains("slide-visible")) {
+              slide.tabIndex = "-1";
+            } else {
+              slide.tabIndex = "";
+            }
+          });
+        },
+        slideChange: function () {
+          this.slides.forEach((slide) => {
+            if (!slide.classList.contains("slide-visible")) {
+              slide.tabIndex = "-1";
+            } else {
+              slide.tabIndex = "";
+            }
+          });
+        }
+      }
+
+    });
+
+  let projectSwiper = new Swiper(".project__swiper", {
     direction: "horizontal",
     loop: true,
-    slidesPerView: 3,
-    slidesPerGroup: 3,
-    spaceBetween: 34,
-    breakpoints: {
-      1920: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        spaceBetween: 47,
-      },
-      1440: {
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-        spaceBetween: 34,
-      },
-      1024: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        spaceBetween: 34,
-      },
-      768: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        spaceBetween: 38,
-      },
-      320: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-      },
-    },
-
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-    },
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    a11y: false,
-    keyboard: {
-      enabled: true,
-      onlyInViewport: true,
-    },
-  });
-
-  const projectSwiper = new Swiper(".project__swiper", {
-    direction: "horizontal",
-    loop: true,
-    slidesPerView: 3,
-    slidesPerGroup: 3,
+    slidesPerView: 1,
     spaceBetween: 50,
 
     breakpoints: {
       1920: {
         slidesPerView: 3,
-        slidesPerGroup: 3,
       },
 
       1024: {
         slidesPerView: 2,
-        slidesPerGroup: 2,
       },
       768: {
         slidesPerView: 2,
-        slidesPerGroup: 2,
         spaceBetween: 36,
       },
       320: {
         slidesPerView: 1,
-        slidesPerGroup: 1,
       },
     },
 
@@ -86,11 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  const eventSwiper = new Swiper(".events__swiper", {
-    direction: "horizontal",
-    loop: true,
-    slidesPerView: 3,
-    slidesPerGroup: 1,
+  let eventSwiper = new Swiper(".events__swiper", {
+    slidesPerView: 1,
     spaceBetween: 37,
 
     breakpoints: {
@@ -99,17 +103,14 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       1024: {
         slidesPerView: 3,
-        slidesPerGroup: 3,
         spaceBetween: 26,
       },
       768: {
         slidesPerView: 2,
-        slidesPerGroup: 2,
         spaceBetween: 34,
       },
       320: {
         slidesPerView: 1,
-        slidesPerGroup: 1,
       },
     },
 
@@ -125,9 +126,10 @@ document.addEventListener("DOMContentLoaded", () => {
       enabled: true,
       onlyInViewport: true,
     },
+
   });
 
-  const heroSwiper = new Swiper(".js-hero-swiper", {
+  let heroSwiper = new Swiper(".js-hero-swiper", {
     allowTouchMove: false,
     loop: true,
     effect: "fade",

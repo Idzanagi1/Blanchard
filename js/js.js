@@ -154,3 +154,7 @@ function setMenuListener() {
 }
 
 setMenuListener();
+
+jQuery(document).ready(function($) {
+  $('.events__card').matchHeight();
+});

@@ -3,6 +3,12 @@ body {
   min-height: 100vh;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -178,7 +184,10 @@ button {
   display: flex;
   flex-wrap: wrap;
   column-gap: 64px;
-  row-gap: 20px;
+}
+
+.header__logo {
+  padding-right: 40px;
 }
 
 .nav {
@@ -452,6 +461,8 @@ button {
   line-height: 19px;
   padding-left: 14px;
   margin: 2px;
+  outline: 2px solid transparent;
+  transition: .3s ease
 }
 
 .dropdown-list:not(:last-child) {
@@ -464,8 +475,7 @@ button {
 }
 
 .dropdown__link:active {
-  background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4)), url(.jpg);
-  outline: none;
+  background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
 }
 
 
@@ -565,12 +575,11 @@ button {
 
 .hero__btn:focus {
   outline: 2px solid #d1a9f0;
+  outline-offset: 3px;
 }
 
 .hero__btn:hover {
-
   outline: 2px solid #d1a9f0;
-  outline-offset: 3px;
 }
 
 .hero__btn:active {
@@ -711,11 +720,16 @@ button {
   background-size: cover;
 }
 
+.galery__right {
+  display: flex;
+  flex-direction: column;
+  width: calc(400 / 1587 * 100%);
+}
+
 .galery__title {
   font-weight: 400;
   font-size: 48px;
   line-height: 65px;
-  word-break: break-word;
   margin-bottom: 15px;
   color: #ffffff;
 }
@@ -737,8 +751,7 @@ button {
 }
 
 .choices {
-  width: 397px;
-  height: 39px;
+  width: 100%;
   border: 1px solid #ffffff;
   border-radius: 6px;
   font-weight: 400;
@@ -750,14 +763,16 @@ button {
 
 .choices__inner {
   background-color: inherit;
+  min-height: 100%;
   font-size: 16px;
   padding-left: 12px;
+  transition: .3s ease;
 }
 
 .choices__inner:focus,
 .choices__inner:hover,
 .choices__inner:active {
-  width: 385px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.2);
   outline: 1px solid #ffffff;
 }
@@ -864,13 +879,19 @@ button {
   color: #C283F3;
 }
 
-.mySwiper {
-  max-width: 1150px;
-  height: 350px;
-  padding: 84px 2px 2px 2px;
+.galery__left {
+  width: calc(1156 / 1600 * 100%);
+  margin-right: 0;
+  padding-top: 26px;
+}
+
+.slides-container {
+  overflow: hidden;
+  padding: 20px 2px 2px 2px;
 }
 
 .galery__swiper-slide {
+  overflow: hidden;
   cursor: pointer;
 }
 
@@ -885,7 +906,6 @@ button {
 .swiper__img {
   display: block;
   position: relative;
-  width: 100%;
   overflow: hidden;
   object-fit: cover;
   transition: .3s ease;
@@ -935,63 +955,61 @@ button {
 
 
 .galery__btn {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  width: 130px;
-  min-height: 44px;
-  padding-top: 10px;
-  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-left: 10px;
 }
 
-.swiper-button-prev {
-  left: 2px;
+.galery__btn .swiper-button-disabled path {
+  fill: rgba(102, 102, 102, 0.5);
+  cursor: auto;
 }
 
-.swiper-button-next {
-  right: -2px;
+.galery-button-prev {
+  margin-right: 15px;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+.galery-button-next,
+.galery-button-prev {
+  position: relative;
+  flex-shrink: 0;
   width: 30px;
   height: 30px;
-  top: 85%;
-  outline: none;
-  z-index: 30;
+  cursor: pointer;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
+.galery-button-next::after,
+.galery-button-prev::after {
   content: '';
 }
 
-.swiper-button-next path,
-.swiper-button-prev path {
-  transition: fill .3s, outline .3s ease-in-out;
+.galery-button-next path,
+.galery-button-prev path {
+  transition: .3s ease-in-out;
 }
 
-.swiper-button-next:focus,
-.swiper-button-prev:focus {
+.galery-button-next path:focus,
+.galery-button-prev path:focus {
   outline: 1px solid #000000;
 }
 
-.swiper-button-next path:hover,
-.swiper-button-prev path:hover {
+.galery-button-next path:hover,
+.galery-button-prev path:hover {
   fill: #9d5cd0;
 }
 
-.swiper-button-next path:active,
-.swiper-button-prev path:active {
+.galery-button-next path:active,
+.galery-button-prev path:active {
   fill: #7943a4;
   outline: 1px solid #000000;
 }
 
 .swiper-pagination {
-  width: 135px;
-  line-height: 10px;
+  position: inherit;
+  margin-right: 20px;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
 }
 
 
@@ -1025,11 +1043,11 @@ button {
 }
 
 .catalog__left {
-  width: 750px;
+  width: 47%;
 }
 
 .catalog__right {
-  width: 800px;
+  width: 50%;
 }
 
 .catalog__photo {
@@ -1138,9 +1156,7 @@ button {
 }
 
 .accordion__bottom {
-  columns: auto;
-  column-width: 194px;
-  column-gap: 30px;
+  column-count: 3;
   padding: 25px 0;
 }
 
@@ -1148,7 +1164,7 @@ button {
   display: flex;
   flex-direction: row;
   padding: 37px 15px;
-  height: 170px;
+  height: auto;
 }
 
 .ui-accordion .ui-accordion-header-active {
@@ -1212,22 +1228,25 @@ button {
   order: 0;
   flex-grow: 0;
   border-bottom: 1px solid transparent;
-  transition: all .3s ease;
+  transition: .3s ease;
 }
 
 .accordion__btn:focus {
   color: white;
+  box-shadow: 0 0 0 3px #9d5cd0;
   background: #9d5cd0;
 }
 
 .accordion__btn:hover {
   background: inherit;
   color: #9d5cd0;
+  box-shadow: none;
   border-bottom: 1px solid #9d5cd0;
 }
 
 .accordion__btn:active {
   border: none;
+  color: #000000;
 }
 
 .accordion__pic {
@@ -1260,16 +1279,17 @@ button {
 /* Events */
 
 .events {
+  position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
 }
 
 .events__swiper {
   max-width: 1610px;
-  padding-right: 25px;
 }
 
 .events__photo {
+  width: 100%;
   height: 300px;
 }
 
@@ -1311,15 +1331,28 @@ button {
 
 .event-button-next {
   position: absolute;
-  top: 46.6%;
-  right: 0;
+  top: 52%;
+  right: 7%;
   z-index: 20;
 }
 
+.event-button-prev {
+  position: absolute;
+  transform: rotate(180deg);
+  top: 52%;
+  left: 7%;
+  z-index: 20;
+}
+
+.event-button-prev,
 .event-button-next:focus {
   outline: none;
 }
 
+.events__btn .swiper-button-disabled,
+.events__btn .swiper-button-disabled {
+  display: none;
+}
 
 .annot {
   width: 155px;
@@ -1389,7 +1422,7 @@ button {
 .project {
   min-height: 562px;
   padding-top: 40px;
-  margin-bottom: 55px;
+  margin-bottom: 80px;
 }
 
 .project__title {
@@ -1474,7 +1507,7 @@ button {
   display: flex;
   position: absolute;
   justify-content: space-between;
-  bottom: 43%;
+  bottom: 34%;
   width: 100%;
   min-height: 30px;
 }
@@ -1551,7 +1584,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 152px;
+  min-height: 152px;
 }
 
 .map__title {
@@ -1595,7 +1628,7 @@ button {
 }
 
 .fio {
-  width: 243px;
+  width: 268px;
   line-height: 32px;
   padding: 8px 0 8px 24px;
   border: 1px solid #333333;
@@ -1607,7 +1640,8 @@ button {
   font-weight: 700;
   font-size: 18px;
   line-height: 25px;
-  width: 330px;
+  padding: 12px 35px;
+  max-width: 343px;
   min-height: 50px;
   border: 2px solid #9d5cd0;
   border-radius: 100px;
@@ -1778,8 +1812,12 @@ button {
 }
 
 @media (max-width: 1440px) {
-  .mySwiper {
-    max-width: 763px;
+  .header__list {
+    column-gap: 35px;
+  }
+
+  .navigation-bottom {
+    display: none;
   }
 }
 
@@ -1867,10 +1905,6 @@ button {
     margin-right: 7px;
   }
 
-  .navigation-bottom {
-    display: none;
-  }
-
   .form__input {
     width: 213px;
     margin-right: 15px;
@@ -1895,9 +1929,8 @@ button {
   }
 
   .header__logo {
-    display: block;
-    width: 190px;
     line-height: 15px;
+    padding-right: 0;
   }
 
   .hero__title {
@@ -1920,27 +1953,12 @@ button {
     min-height: 559px;
   }
 
-  .galery__title {
-    margin-bottom: 15px;
+  .galery__left {
+    width: calc(1043 / 1600 * 100%);
   }
 
-  .swiper-button-prev {
-    left: 1px;
-  }
-
-  .swiper-button-next {
-    right: -1px;
-  }
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: 30px;
-    top: 85%;
-  }
-
-  .swiper-pagination {
-    bottom: 9px;
-    left: -1px;
+  .galery__right {
+    width: calc(480 / 1587 * 100%);
   }
 
   .swiper__img img {
@@ -1959,8 +1977,6 @@ button {
   }
 
   .choices {
-    width: 277px;
-    height: 37px;
     margin-bottom: 106px;
   }
 
@@ -1983,8 +1999,11 @@ button {
   }
 
   .swiper {
-    max-width: 595px;
     height: auto;
+  }
+
+  .catalog__right {
+    width: 47%;
   }
 
   .catalog__photo {
@@ -1998,9 +2017,6 @@ button {
     margin-bottom: 39px;
   }
 
-  .catalog__left {
-    width: 436px;
-  }
 
   .tabs-item__descr {
     line-height: 32px;
@@ -2013,13 +2029,13 @@ button {
     color: #999999;
   }
 
-  .catalog__right {
-    width: 437px;
-  }
-
   .catalog__name {
     font-size: 24.57px;
     margin-bottom: 14px;
+  }
+
+  .accordion__bottom {
+    column-count: 2;
   }
 
   .accordion__top svg {
@@ -2034,13 +2050,11 @@ button {
   }
 
   .accordion__unknow {
-    width: 240px;
     padding-top: 0;
     margin: 0;
   }
 
   .unknow {
-    height: 114px;
     padding: 33px 15px;
   }
 
@@ -2079,7 +2093,7 @@ button {
   .events__card {
     width: 289px;
     min-height: 613px;
-    padding-bottom: 103px;
+    padding-bottom: 70px;
   }
 
   .events__btn {
@@ -2120,7 +2134,7 @@ button {
     display: flex;
     justify-content: center;
     position: absolute;
-    margin: 0 auto;
+    margin: 17px auto;
   }
 
   .swiper-pagination-bullet {
@@ -2132,18 +2146,13 @@ button {
     background: #666666;
   }
 
-  .project__swiper {
-    max-width: 818px;
-    height: 129px;
-  }
-
   .project {
-    margin-bottom: 77px;
+    margin-bottom: 53px;
     padding-top: 14px;
   }
 
   .project__btn {
-    bottom: 34%;
+    bottom: 42%;
   }
 
   .project__text {
@@ -2162,9 +2171,9 @@ button {
   .map__top {
     flex-direction: column;
     align-items: flex-start;
-    height: 247px;
+    min-height: 325px;
     padding-top: 50px;
-    padding-bottom: 35px;
+    padding-bottom: 37px;
   }
 
   .map__title {
@@ -2177,11 +2186,7 @@ button {
 
   .map__descr {
     line-height: 22px;
-    margin-bottom: 20px;
-  }
-
-  .map__btn {
-    width: 343px;
+    margin-bottom: 26px;
   }
 
   .footer__messager {
@@ -2200,8 +2205,7 @@ button {
 
   .map__form {
     max-width: 923px;
-    min-height: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
 
   .footer__mess {
@@ -2227,6 +2231,10 @@ button {
 
   .hero {
     min-height: 558px;
+  }
+
+  .hero__title {
+    font-size: 9.4vw;
   }
 
   .hero__descr {
@@ -2275,9 +2283,11 @@ button {
     background-size: cover;
   }
 
-  .swiper-pagination {
-    bottom: 0;
-    left: -2px;
+  .galery__right,
+  .galery__left {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 20px;
   }
 
   .galery__title {
@@ -2288,15 +2298,14 @@ button {
     margin-bottom: 10px;
   }
 
-  .galery__content {
-    flex-direction: column;
-    padding-top: 50px;
-    padding-bottom: 34px;
+  .galery__btn {
+    padding-left: 0;
   }
 
-  .swiper {
-    max-width: 672px;
-    padding-top: 100px;
+  .galery__content {
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 34px;
   }
 
   .hero__swiper {
@@ -2310,10 +2319,6 @@ button {
   .swiper__img::after {
     left: 30px;
     bottom: 30px;
-  }
-
-  .galery__btn {
-    padding-top: 24px;
   }
 
   .choices {
@@ -2341,7 +2346,7 @@ button {
   }
 
   .catalog__left {
-    width: 669.5px;
+    width: 100%;
   }
 
   .catalog__photo {
@@ -2358,7 +2363,7 @@ button {
   }
 
   .catalog__right {
-    width: 669.5px;
+    width: 100%;
     margin-bottom: 49px;
   }
 
@@ -2367,12 +2372,15 @@ button {
   }
 
   .unknow {
-    height: 167px;
     padding: 33px 15px;
   }
 
   .unknow__descr {
     width: 275px;
+  }
+
+  .accordion__bottom {
+    column-count: 3;
   }
 
   .accordion__pic {
@@ -2428,11 +2436,6 @@ button {
     min-height: 10px;
   }
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    top: 95%;
-  }
-
   .swiper__img:hover::after {
     opacity: 1;
     width: 259px;
@@ -2440,18 +2443,17 @@ button {
   }
 
   .project {
-    margin-bottom: 57px;
+    margin-bottom: 30px;
     padding-top: 15px;
   }
 
   .project__swiper {
-    max-width: 561px;
     padding-top: 29px;
-    margin-bottom: 57px;
+    margin-bottom: 30px;
   }
 
   .project__btn {
-    bottom: 37%;
+    bottom: 48%;
   }
 
   .project__text {
@@ -2464,25 +2466,20 @@ button {
     display: none;
   }
 
-  .project__slide {
-    height: 106px;
-  }
-
   .map__top {
-    height: 313px;
+    min-height: 379px;
     padding-top: 49px;
   }
 
   .map__form {
     flex-wrap: wrap;
     max-width: 668px;
-    min-height: 112px;
     gap: 0;
-    margin-bottom: 28px;
+    margin-bottom: 34px;
   }
 
   .map__descr {
-    margin-bottom: 15px;
+    margin-bottom: 28px;
   }
 
   .map__span {
@@ -2496,16 +2493,17 @@ button {
   }
 
   .fio {
-    width: 297px;
+    width: 323px;
   }
 
   .map__btn {
-    width: 317px;
+    max-width: 323px;
     min-height: 50px;
+    padding: 12px 30px;
   }
 
   .map__span {
-    width: 300px;
+    max-width: 300px;
     min-height: 78px;
   }
 }
@@ -2573,7 +2571,7 @@ button {
   .form__active {
     top: 0px;
     right: 0px;
-    width: 322px;
+    width: 100%;
     height: 75px;
     background: rgba(0, 0, 0, 0.9);
     z-index: 1000;
@@ -2723,6 +2721,19 @@ button {
     margin-bottom: 50px;
   }
 
+  .galery__content {
+    padding-top: 52px;
+  }
+
+  .galery__right {
+    margin-bottom: 0;
+  }
+
+  .galery__left {
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+
   .galery__title {
     font-size: 28px;
     line-height: 38px;
@@ -2733,14 +2744,10 @@ button {
     margin-bottom: 5px;
   }
 
-  .swiper-pagination {
-    bottom: 26px;
-    left: -2px;
-  }
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    top: 83%;
+  .galery__btn {
+    align-self: center;
+    margin-bottom: 13px;
+    margin-top: 20px;
   }
 
   .choices {
@@ -2755,18 +2762,11 @@ button {
   .galery__left {
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;
     min-height: 467px;
   }
 
   .choices__inner:hover {
     width: 278px;
-  }
-
-  .mySwiper {
-    width: 290px;
-    padding-top: 30px;
-    margin-bottom: 70px;
   }
 
   .swiper__img img {
@@ -2782,17 +2782,6 @@ button {
   .swiper__img::after {
     left: 15px;
     right: 15px;
-  }
-
-  .galery__btn {
-    padding-top: 132px;
-    min-height: 35px;
-  }
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: 30px;
-    min-height: 30px;
   }
 
   .catalog {
@@ -2835,13 +2824,13 @@ button {
   .accordion__top svg {
     width: 26px;
     height: 26px;
-    margin-top: -14px;
+    margin-top: -8px;
   }
 
   .accordion__bottom {
-    width: 198px;
-    height: 768px;
-    padding: 20px 0;
+    column-count: 1;
+    justify-content: space-between;
+    padding: 24px 0;
   }
 
   .accordion__unknow {
@@ -2850,8 +2839,6 @@ button {
   }
 
   .unknow {
-    width: 292px;
-    height: 165px;
     padding: 25px 0 25px 10px;
   }
 
@@ -2915,7 +2902,7 @@ button {
   .events__card {
     width: 288px;
     min-height: 542px;
-    padding-bottom: 129px;
+    padding-bottom: 98px;
   }
 
   .events__btn {
@@ -2952,7 +2939,9 @@ button {
     width: 294px;
     padding-right: 0;
   }
-
+  .event-swiper-pagination {
+  margin: 27px auto;
+  }
   .project {
     max-width: 425px;
     margin-bottom: 50px;
@@ -2999,8 +2988,9 @@ button {
   .map__top {
     height: 354px;
     border: none;
-    padding-top: 23px;
+    padding-top: 33px;
     padding-bottom: 0;
+    margin-bottom: 8px;
   }
 
   .map__title {
@@ -3017,7 +3007,7 @@ button {
 
   .map__form {
     max-width: 320px;
-    margin-bottom: 33px;
+    margin-bottom: 17px;
   }
 
   .place {
@@ -3028,7 +3018,7 @@ button {
   }
 
   .fio {
-    width: 265px;
+    width: 100%;
     padding: 2px 0 2px 24px;
   }
 

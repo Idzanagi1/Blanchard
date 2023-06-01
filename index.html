@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/swiper@8/swiper-bundle.min.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="libs/jquery-ui-1.13.1/jquery-ui.css" rel="stylesheet">
     <link href="https://unpkg.com/simplebar@latest/dist/simplebar.css" rel="stylesheet">
@@ -22,8 +21,8 @@
         <div class="navigation">
             <div class="container">
                 <div class="header__nav">
-                    <a>
-                        <picture class="header__logo">
+                    <a class="header__logo">
+                        <picture>
                             <source srcset="img/logo320.svg" media="(max-width: 320px)">
                             <img src="img/logo.svg" alt="logo">
                         </picture>
@@ -56,12 +55,12 @@
                                 <a class="header__link" href="#contacts">Контакты</a>
                             </li>
                         </ul>
-                        <button class="header__link header__btn">
+                        <a class="header__link header__btn">
                   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z" fill="white"></path>
                   </svg>
                   Войти
-                </button>
+                </a>
                     </nav>
                     <div class="header__form">
                         <button class="header__button" aria-label="Найти">
@@ -268,110 +267,107 @@
             </div>
         </section>
         <section class="galery">
-            <div class="container">
-                <div class="galery__content">
-                    <div class="galery__right">
-                        <h2 class="galery__title" id="galery">Галерея</h2>
-                        <span class="galery__span">Фильтр:</span>
-                        <select class="select">
+          <div class="container">
+            <div class="galery__content">
+              <div class="galery__right">
+                <h2 class="galery__title" id="galery">Галерея</h2>
+                <span class="galery__span">Фильтр:</span>
+                <select class="select">
                   <option value="Живопись">Живопись</option>
                   <option value="Рисунок">Рисунок</option>
                   <option value="Скульптура">Скульптура</option>
                 </select>
-                        <div class="checkbox">
-                            <label class="checkbox__custom">
-                            <input class="visually-hidden checkbox" type="checkbox">
-                            <span class="visible-checkbox"></span>
-                            <span class="check-text">XIX век</span>
-                          </label>
-                            <label class="checkbox__custom">
-                            <input class="visually-hidden checkbox" type="checkbox">
-                            <span class="visible-checkbox"></span>
-                            <span class="check-text">XX век</span>
-                          </label>
-                            <label class="checkbox__custom">
-                            <input class="visually-hidden checkbox" type="checkbox">
-                            <span class="visible-checkbox"></span>
-                            <span class="check-text">Современность</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="galery__left">
-                      <div class="galery__btn">
-                        <button class="swiper-button-prev">
-                          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#666666"></path>
-                            <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="black"></path>
-                            <path d="M16 20L11 15L16 10" stroke="white"></path>
-                          </svg>
-                        </button>
-                                  <div class="swiper-pagination"></div>
-                                  <button class="swiper-button-next">
-                          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" fill="#666666"></path>
-                            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" stroke="#000000"></path>
-                            <path d="M14 20L19 15L14 10" stroke="white"></path>
-                          </svg>
-                        </button>
-                      </div>
-                      <div class="swiper mySwiper ">
-                          <div class="swiper-container">
-                            <div class="swiper-wrapper">
-
-                              <a class="swiper-slide galery__swiper-slide">
-                                  <picture class="swiper__img">
-                                      <source srcset="img/galery-slide1-320w.jpg" media="(max-width: 320px)">
-                                      <source srcset="img/galery-slide1-768.jpg" media="(max-width: 768px)">
-                                      <source srcset="img/galery-slide1-1024.jpg" media="(max-width: 1024px)">
-                                      <img src="img/galery-slide1.jpg" alt="pic">
-                                  </picture>
-                              </a>
-                              <a class="swiper-slide galery__swiper-slide">
-                                  <picture class="swiper__img">
-                                      <source srcset="img/galery-slide2-320w.jpg" media="(max-width: 320px)">
-                                      <source srcset="img/galery-slide2-768.jpg" media="(max-width: 768px)">
-                                      <source srcset="img/galery-slide2-1024.jpg" media="(max-width: 1024px)">
-                                      <img src="img/galery-slide2.jpg" alt="pic">
-                                  </picture>
-                              </a>
-                              <a class="swiper-slide galery__swiper-slide">
-                                  <picture class="swiper__img">
-                                      <source srcset="img/galery-slide3-320w.jpg" media="(max-width: 320px)">
-                                      <source srcset="img/galery-slide3-768.jpg" media="(max-width: 768px)">
-                                      <source srcset="img/galery-slide3-1024.jpg" media="(max-width: 1024px)">
-                                      <img src="img/galery-slide3.jpg" alt="pic">
-                                  </picture>
-                              </a>
-                              <a class="swiper-slide galery__swiper-slide">
-                                  <picture class="swiper__img">
-                                      <source srcset="img/galery-slide4-320w.jpg" media="(max-width: 320px)">
-                                      <source srcset="img/galery-slide4-768.jpg" media="(max-width: 768px)">
-                                      <source srcset="img/galery-slide4-1024.jpg" media="(max-width: 1024px)">
-                                      <img src="img/galery-slide4.jpg" alt="pic">
-                                  </picture>
-                              </a>
-                              <a class="swiper-slide galery__swiper-slide">
-                                  <picture class="swiper__img">
-                                      <source srcset="img/galery-slide5-320w.jpg" media="(max-width: 320px)">
-                                      <source srcset="img/galery-slide5-768.jpg" media="(max-width: 768px)">
-                                      <source srcset="img/galery-slide5-1024.jpg" media="(max-width: 1024px)">
-                                      <img src="img/galery-slide5.jpg" alt="pic">
-                                  </picture>
-                              </a>
-                              <a class="swiper-slide galery__swiper-slide">
-                                  <picture class="swiper__img">
-                                      <source srcset="img/galery-slide6-320w.jpg" media="(max-width: 320px)">
-                                      <source srcset="img/galery-slide6-768.jpg" media="(max-width: 768px)">
-                                      <source srcset="img/galery-slide6-1024.jpg" media="(max-width: 1024px)">
-                                      <img src="img/galery-slide6.jpg" alt="pic">
-                                  </picture>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
+                <div class="checkbox">
+                    <label class="checkbox__custom">
+                    <input class="visually-hidden checkbox" type="checkbox">
+                    <span class="visible-checkbox"></span>
+                    <span class="check-text">XIX век</span>
+                  </label>
+                    <label class="checkbox__custom">
+                    <input class="visually-hidden checkbox" type="checkbox">
+                    <span class="visible-checkbox"></span>
+                    <span class="check-text">XX век</span>
+                  </label>
+                    <label class="checkbox__custom">
+                    <input class="visually-hidden checkbox" type="checkbox">
+                    <span class="visible-checkbox"></span>
+                    <span class="check-text">Современность</span>
+                    </label>
                 </div>
             </div>
+              <div class="galery__left">
+                <div class="galery__btn">
+                  <button class="galery-button-prev">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#666666"></path>
+                      <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="black"></path>
+                      <path d="M16 20L11 15L16 10" stroke="white"></path>
+                    </svg>
+                  </button>
+                  <div class="swiper-pagination"></div>
+                  <button class="galery-button-next">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" fill="#666666"></path>
+                      <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" stroke="#000000"></path>
+                      <path d="M14 20L19 15L14 10" stroke="white"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="swiper-container slides-container">
+                  <div class="swiper-wrapper">
+                    <a class="swiper-slide galery__swiper-slide">
+                        <picture class="swiper__img">
+                            <source srcset="img/galery-slide1-320w.jpg" media="(max-width: 320px)">
+                            <source srcset="img/galery-slide1-768.jpg" media="(max-width: 768px)">
+                            <source srcset="img/galery-slide1-1024.jpg" media="(max-width: 1024px)">
+                            <img src="img/galery-slide1.jpg" alt="pic">
+                        </picture>
+                    </a>
+                    <a class="swiper-slide galery__swiper-slide">
+                        <picture class="swiper__img">
+                            <source srcset="img/galery-slide2-320w.jpg" media="(max-width: 320px)">
+                            <source srcset="img/galery-slide2-768.jpg" media="(max-width: 768px)">
+                            <source srcset="img/galery-slide2-1024.jpg" media="(max-width: 1024px)">
+                            <img src="img/galery-slide2.jpg" alt="pic">
+                        </picture>
+                    </a>
+                    <a class="swiper-slide galery__swiper-slide">
+                        <picture class="swiper__img">
+                            <source srcset="img/galery-slide3-320w.jpg" media="(max-width: 320px)">
+                            <source srcset="img/galery-slide3-768.jpg" media="(max-width: 768px)">
+                            <source srcset="img/galery-slide3-1024.jpg" media="(max-width: 1024px)">
+                            <img src="img/galery-slide3.jpg" alt="pic">
+                        </picture>
+                    </a>
+                    <a class="swiper-slide galery__swiper-slide">
+                        <picture class="swiper__img">
+                            <source srcset="img/galery-slide4-320w.jpg" media="(max-width: 320px)">
+                            <source srcset="img/galery-slide4-768.jpg" media="(max-width: 768px)">
+                            <source srcset="img/galery-slide4-1024.jpg" media="(max-width: 1024px)">
+                            <img src="img/galery-slide4.jpg" alt="pic">
+                        </picture>
+                    </a>
+                    <a class="swiper-slide galery__swiper-slide">
+                        <picture class="swiper__img">
+                            <source srcset="img/galery-slide5-320w.jpg" media="(max-width: 320px)">
+                            <source srcset="img/galery-slide5-768.jpg" media="(max-width: 768px)">
+                            <source srcset="img/galery-slide5-1024.jpg" media="(max-width: 1024px)">
+                            <img src="img/galery-slide5.jpg" alt="pic">
+                        </picture>
+                    </a>
+                    <a class="swiper-slide galery__swiper-slide">
+                        <picture class="swiper__img">
+                            <source srcset="img/galery-slide6-320w.jpg" media="(max-width: 320px)">
+                            <source srcset="img/galery-slide6-768.jpg" media="(max-width: 768px)">
+                            <source srcset="img/galery-slide6-1024.jpg" media="(max-width: 1024px)">
+                            <img src="img/galery-slide6.jpg" alt="pic">
+                        </picture>
+                    </a>
+                  </div>
+              </div>
+              </div>
+            </div>
+          </div>
         </section>
         <section class="catalog" id="catalog">
             <div class="container">
@@ -734,17 +730,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="events__btn">
-                        <button class="event-button-next">
-                    <svg class="events__btn" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="event-swiper-pagination"></div>
+                  </div>
+                  <div class="events__btn">
+                      <button class="event-button-next">
+                        <svg class="events__btn" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M25 2.72191e-06C38.8071 2.11838e-06 50 11.1929 50 25C50 38.8071 38.8071 50 25 50C11.1929 50 3.32544e-06 38.8071 2.72191e-06 25C2.11838e-06 11.1929 11.1929 3.32544e-06 25 2.72191e-06Z" fill="#ECECEC"></path>
                         <path d="M25 2.72191e-06C38.8071 2.11838e-06 50 11.1929 50 25C50 38.8071 38.8071 50 25 50C11.1929 50 3.32544e-06 38.8071 2.72191e-06 25C2.11838e-06 11.1929 11.1929 3.32544e-06 25 2.72191e-06Z" stroke="none"></path>
-                      <path d="M23.3333 16.6667L31.6667 25L23.3333 33.3333" stroke="black"></path>
-                    </svg>
-                  </button>
-                    </div>
-                        <div class="event-swiper-pagination"></div>
-                </div>
+                        <path d="M23.3333 16.6667L31.6667 25L23.3333 33.3333" stroke="black"></path>
+                        </svg>
+                      </button>
+                      <button class="event-button-prev">
+                        <svg class="events__btn" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 2.72191e-06C38.8071 2.11838e-06 50 11.1929 50 25C50 38.8071 38.8071 50 25 50C11.1929 50 3.32544e-06 38.8071 2.72191e-06 25C2.11838e-06 11.1929 11.1929 3.32544e-06 25 2.72191e-06Z" fill="#ECECEC"></path>
+                        <path d="M25 2.72191e-06C38.8071 2.11838e-06 50 11.1929 50 25C50 38.8071 38.8071 50 25 50C11.1929 50 3.32544e-06 38.8071 2.72191e-06 25C2.11838e-06 11.1929 11.1929 3.32544e-06 25 2.72191e-06Z" stroke="none"></path>
+                        <path d="M23.3333 16.6667L31.6667 25L23.3333 33.3333" stroke="black"></path>
+                        </svg>
+                      </button>
+                  </div>
             </div>
         </section>
         <section class="project">
@@ -835,7 +838,7 @@
                         <input class="fio tel" data-validate-field="tel" data-validate-rules="phone" name="tel" type="tel" placeholder="Телефон*">
                     </div>
                     <button class="map__btn">
-                Заказать <span>обратный звонок</span>
+                Заказать <span> обратный звонок</span>
               </button>
                 </form>
                 <div class="map__span">
@@ -897,6 +900,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="libs/jquery.matchHeight.js"></script>
     <script src="libs/accordion.js"></script>
     <script src="libs/choices.min.js"></script>
     <script src="js/burger.js"></script>
