@@ -1582,9 +1582,10 @@ button {
 
 .map__top {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 61px;
+  padding: 39px 0;
   align-items: center;
-  min-height: 152px;
 }
 
 .map__title {
@@ -1597,8 +1598,8 @@ button {
 
 .map__form {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   max-width: 908px;
   gap: 20px;
 }
@@ -2169,11 +2170,8 @@ button {
   }
 
   .map__top {
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 325px;
-    padding-top: 50px;
-    padding-bottom: 37px;
+    row-gap: 28px;
+    padding: 50px 0;
   }
 
   .map__title {
@@ -2186,7 +2184,6 @@ button {
 
   .map__descr {
     line-height: 22px;
-    margin-bottom: 26px;
   }
 
   .footer__messager {
@@ -2205,7 +2202,6 @@ button {
 
   .map__form {
     max-width: 923px;
-    margin-bottom: 35px;
   }
 
   .footer__mess {
@@ -2467,19 +2463,13 @@ button {
   }
 
   .map__top {
-    min-height: 379px;
-    padding-top: 49px;
+    padding-bottom: 33px;
   }
 
   .map__form {
-    flex-wrap: wrap;
-    max-width: 668px;
-    gap: 0;
-    margin-bottom: 34px;
-  }
-
-  .map__descr {
-    margin-bottom: 28px;
+    row-gap: 0;
+    column-gap: 18px;
+    margin-bottom: 10px;
   }
 
   .map__span {
@@ -2489,7 +2479,7 @@ button {
   .place {
     width: 325px;
     min-height: 50px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 
   .fio {
@@ -2497,8 +2487,6 @@ button {
   }
 
   .map__btn {
-    max-width: 323px;
-    min-height: 50px;
     padding: 12px 30px;
   }
 
@@ -2986,11 +2974,10 @@ button {
   }
 
   .map__top {
-    height: 354px;
     border: none;
-    padding-top: 33px;
-    padding-bottom: 0;
-    margin-bottom: 8px;
+    padding: 32px 0;
+    padding-bottom: 13px;
+    row-gap: 19px;
   }
 
   .map__title {
@@ -3002,18 +2989,16 @@ button {
     font-size: 14px;
     line-height: 18px;
     margin: 0;
-    margin-bottom: 21px;
   }
 
   .map__form {
     max-width: 320px;
-    margin-bottom: 17px;
+    margin-bottom: 0;
   }
 
   .place {
     display: inline-block;
-    width: 290px;
-    min-height: 50px;
+    width: 100%;
     margin-bottom: 10px;
   }
 
@@ -3040,7 +3025,6 @@ button {
   }
 
   .messager {
-    margin-bottom: 20px;
     padding-top: 7px;
   }
 

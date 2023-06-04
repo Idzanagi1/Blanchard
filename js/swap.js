@@ -67,20 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
     spaceBetween: 50,
 
     breakpoints: {
-      1920: {
-        slidesPerView: 3,
-      },
-
       1024: {
-        slidesPerView: 2,
+       slidesPerView: 3
       },
       768: {
-        slidesPerView: 2,
-        spaceBetween: 36,
+        slidesPerView: 2
       },
       320: {
         slidesPerView: 1,
-      },
+        },
     },
 
     navigation: {
