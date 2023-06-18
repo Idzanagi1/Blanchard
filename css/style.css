@@ -91,7 +91,8 @@ button {
 }
 
 .container {
-  max-width: 83.4%;
+  max-width: 1700px;
+  padding: 0 50px;
   margin: 0 auto;
 }
 
@@ -313,6 +314,7 @@ button {
 .navigation-bottom__input {
   font-size: 18px;
   line-height: 25px;
+  transition: .3s ease;
   padding: 0;
   outline: none;
   border: none;
@@ -341,6 +343,11 @@ button {
 .navigation-bottom__button:active rect {
   transition: fill 0.3s ease;
   fill: #7943a4;
+}
+
+.navigation-bottom__input:focus::placeholder {
+  opacity: 0;
+  transition: 0.3s ease;
 }
 
 .navigation-bottom__input:focus,
@@ -691,7 +698,7 @@ button {
 
 .about {
   padding-top: 80px;
-  margin-bottom: 71px;
+  padding-bottom: 71px;
 }
 
 .about__title {
@@ -715,7 +722,6 @@ button {
 /* Galery */
 
 .galery {
-  min-height: 595px;
   background-image: url('../img/galery-background.jpg');
   background-size: cover;
 }
@@ -759,6 +765,10 @@ button {
   line-height: 32px;
   color: #ffffff;
   margin-bottom: 173px;
+}
+
+.choices:focus {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .choices__inner {
@@ -891,6 +901,7 @@ button {
 }
 
 .galery__swiper-slide {
+  position: relative;
   overflow: hidden;
   cursor: pointer;
 }
@@ -903,15 +914,17 @@ button {
   outline: none;
 }
 
-.swiper__img {
+.galery__swiper-img {
   display: block;
   position: relative;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   object-fit: cover;
   transition: .3s ease;
 }
 
-.swiper__img:hover::after {
+.galery__swiper-img:hover::after {
   content: '';
   position: absolute;
   text-align: center;
@@ -928,7 +941,7 @@ button {
   z-index: 100;
 }
 
-.swiper__img:active:before {
+.galery__swiper-img:active:before {
   content: '';
   position: absolute;
   width: auto;
@@ -943,13 +956,13 @@ button {
   background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
 }
 
-.swiper__img:active::before {
+.galery__swiper-img:active::before {
   opacity: 1;
   width: 360px;
   height: 364px;
 }
 
-.swiper__img:hover::after {
+.galery__swiper-img:hover::after {
   opacity: 1;
 }
 
@@ -958,7 +971,13 @@ button {
   display: inline-flex;
   align-items: center;
   margin-bottom: 10px;
+  transition: .3s ease;
   padding-left: 10px;
+
+}
+
+.galery__btn .swiper-button-disabled {
+  pointer-events: none;
 }
 
 .galery__btn .swiper-button-disabled path {
@@ -970,6 +989,12 @@ button {
   margin-right: 15px;
 }
 
+.galery-button-next:focus,
+.galery-button-prev:focus {
+  outline: 2px solid #000;
+  outline-offset: -2px;
+}
+
 .galery-button-next,
 .galery-button-prev {
   position: relative;
@@ -977,11 +1002,9 @@ button {
   width: 30px;
   height: 30px;
   cursor: pointer;
-}
-
-.galery-button-next::after,
-.galery-button-prev::after {
-  content: '';
+  outline: 2px solid transparent;
+  border-radius: 50%;
+  transition: .3s ease;
 }
 
 .galery-button-next path,
@@ -989,20 +1012,16 @@ button {
   transition: .3s ease-in-out;
 }
 
-.galery-button-next path:focus,
-.galery-button-prev path:focus {
-  outline: 1px solid #000000;
-}
-
 .galery-button-next path:hover,
 .galery-button-prev path:hover {
+  outline: none;
   fill: #9d5cd0;
 }
 
 .galery-button-next path:active,
 .galery-button-prev path:active {
   fill: #7943a4;
-  outline: 1px solid #000000;
+  outline: 2px solid #000000;
 }
 
 .swiper-pagination {
@@ -1080,6 +1099,27 @@ button {
 
 .catalog__link {
   color: #9d5cd0;
+  transition: .3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.catalog__link:focus {
+  color: white;
+  box-shadow: 0 0 0 3px #9d5cd0;
+  background: #9d5cd0;
+  outline: none;
+}
+
+.catalog__link:hover {
+  background: inherit;
+  color: #9d5cd0;
+  box-shadow: none;
+  border-bottom: 1px solid #9d5cd0;
+}
+
+.catalog__link:active {
+  border: none;
+  color: #000000;
 }
 
 .tabs-item {
@@ -1160,6 +1200,17 @@ button {
   padding: 25px 0;
 }
 
+.accordion__bottom a:focus {
+  outline: none;
+}
+
+.accordion__unknow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 35%;
+}
+
 .unknow {
   display: flex;
   flex-direction: row;
@@ -1172,6 +1223,12 @@ button {
   background-color: transparent;
   color: #9d5cd0;
   border-color: #9d5cd0;
+}
+
+.ui-accordion .ui-accordion-header-active:focus p {
+  color: white;
+  box-shadow: 0 0 0 3px #9d5cd0;
+  background: #9d5cd0;
 }
 
 .ui-accordion .ui-accordion-header-active p {
@@ -1250,8 +1307,8 @@ button {
 }
 
 .accordion__pic {
-  width: 251px;
-  height: 165px;
+  width: 32.7%;
+  min-height: 165px;
   margin-right: 36px;
   background: #b7b7b7;
   outline: 2px solid #b7b7b7;
@@ -1259,16 +1316,13 @@ button {
 }
 
 .unknow__title {
-  width: 207px;
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
-  padding-top: 29px;
   color: #333333;
 }
 
 .unknow__descr {
-  width: 275px;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -1284,13 +1338,9 @@ button {
   padding-bottom: 40px;
 }
 
-.events__swiper {
-  max-width: 1610px;
-}
 
 .events__photo {
   width: 100%;
-  height: 300px;
 }
 
 .events__title {
@@ -1318,29 +1368,31 @@ button {
 }
 
 .events__card {
-  flex: 1;
   position: relative;
-  padding-bottom: 136px;
+  padding-bottom: 28%;
   border: 1px solid #cacaca;
-  min-height: 561px;
 }
 
 .events__text {
   padding: 0 50px;
 }
 
+.events__slider {
+  position: relative;
+}
+
 .event-button-next {
   position: absolute;
-  top: 52%;
-  right: 7%;
+  top: 47%;
+  right: -25px;
   z-index: 20;
 }
 
 .event-button-prev {
   position: absolute;
   transform: rotate(180deg);
-  top: 52%;
-  left: 7%;
+  top: 47%;
+  left: -25px;
   z-index: 20;
 }
 
@@ -1421,8 +1473,8 @@ button {
 
 .project {
   min-height: 562px;
-  padding-top: 40px;
-  margin-bottom: 80px;
+  padding-top: 36px;
+  padding-bottom: 80px;
 }
 
 .project__title {
@@ -1458,7 +1510,11 @@ button {
 }
 
 .project__slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
   filter: grayscale(1) opacity(0.5);
+
 }
 
 .project__slide:hover {
@@ -1489,14 +1545,10 @@ button {
 
 .project__swiper {
   position: initial;
-  max-width: 90%;
-  padding: 23px 2px 3px 2px;
-  height: 174px;
+  padding-top: 24px;
+  margin: 0 74px;
 }
 
-.project-swiper-slider {
-  height: 150px;
-}
 
 .project-swiper-slider:active,
 .project-swiper-slider:focus {
@@ -1583,8 +1635,8 @@ button {
 .map__top {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px 61px;
-  padding: 39px 0;
+  gap: 20px 81px;
+  padding: 37px 50px;
   align-items: center;
 }
 
@@ -1823,11 +1875,6 @@ button {
 }
 
 @media (max-width: 1024px) {
-  .container {
-    max-width: 90%;
-    margin: 0 auto;
-  }
-
   .burger {
     display: block;
     order: -1;
@@ -1874,7 +1921,7 @@ button {
 
   .header__list {
     flex-direction: column;
-    padding-top: 612px;
+    padding-top: 614px;
     margin-right: 0;
   }
 
@@ -1882,8 +1929,12 @@ button {
     font-size: 24px;
   }
 
+  .header__li {
+    line-height: 27px;
+  }
+
   .header__li:not(:last-child) {
-    margin-bottom: 16px;
+    margin-bottom: 34px;
   }
 
   .header__li:last-child {
@@ -1950,8 +2001,8 @@ button {
     min-height: 246px;
   }
 
-  .galery {
-    min-height: 559px;
+  .galery__content {
+    padding-bottom: 73px;
   }
 
   .galery__left {
@@ -1962,17 +2013,17 @@ button {
     width: calc(480 / 1587 * 100%);
   }
 
-  .swiper__img img {
+  .galery__swiper-img img {
     height: 315px;
   }
 
-  .swiper__img:hover::after {
+  .galery__swiper-img:hover::after {
     opacity: 1;
     width: 249px;
     height: 286px;
   }
 
-  .swiper__img::after {
+  .galery__swiper-img::after {
     left: 15px;
     bottom: 15px;
   }
@@ -1994,7 +2045,6 @@ button {
   .choices__inner:focus,
   .choices__inner:hover,
   .choices__inner:active {
-    width: 265px;
     min-height: 37px;
     border-radius: 6px;
   }
@@ -2037,6 +2087,7 @@ button {
 
   .accordion__bottom {
     column-count: 2;
+    padding: 29px 0;
   }
 
   .accordion__top svg {
@@ -2045,12 +2096,12 @@ button {
   }
 
   .accordion__pic {
-    width: 173px;
-    height: 114px;
+    width: 44.7%;
     outline-offset: 6px;
   }
 
   .accordion__unknow {
+    width: 58%;
     padding-top: 0;
     margin: 0;
   }
@@ -2060,13 +2111,8 @@ button {
   }
 
   .unknow__title {
-    line-height: 8px;
     padding-top: 0;
-    margin-bottom: 12px;
-  }
-
-  .unknow__descr {
-    width: 218px;
+    margin-bottom: 5px;
   }
 
   .catalog {
@@ -2081,28 +2127,17 @@ button {
     display: none;
   }
 
-  .events__swiper {
-    height: 750px;
-    max-width: 925px;
-  }
-
   .events__link {
     left: 33px;
     bottom: 54px;
-  }
-
-  .events__card {
-    width: 289px;
-    min-height: 613px;
-    padding-bottom: 70px;
   }
 
   .events__btn {
     display: none;
   }
 
-  .events__photo {
-    height: 201px;
+  .events__card {
+    padding-bottom: 25%;
   }
 
   .events__text {
@@ -2134,8 +2169,7 @@ button {
   .event-swiper-pagination {
     display: flex;
     justify-content: center;
-    position: absolute;
-    margin: 17px auto;
+    margin-top: 30px;
   }
 
   .swiper-pagination-bullet {
@@ -2148,12 +2182,12 @@ button {
   }
 
   .project {
-    margin-bottom: 53px;
-    padding-top: 14px;
+    padding-bottom: 73px;
+    padding-top: 38px;
   }
 
-  .project__btn {
-    bottom: 42%;
+  .project__swiper {
+    margin: 0 53px;
   }
 
   .project__text {
@@ -2171,7 +2205,8 @@ button {
 
   .map__top {
     row-gap: 28px;
-    padding: 50px 0;
+    padding: 50px 50px;
+    padding-bottom: 38px;
   }
 
   .map__title {
@@ -2211,14 +2246,9 @@ button {
 }
 
 @media (max-width: 768px) {
-  .container {
-    max-width: 87%;
-    margin: 0 auto;
-  }
 
   .nav-active {
     min-height: 1211px;
-    padding-bottom: 0;
   }
 
   .header__list {
@@ -2261,7 +2291,7 @@ button {
 
   .form__active {
     top: 0px;
-    width: 668px;
+    width: calc(100% - 80px);
     height: 100px;
     background-color: #000000;
     z-index: 1000;
@@ -2308,11 +2338,11 @@ button {
     min-height: 329px;
   }
 
-  .swiper__img img {
+  .galery__swiper-img img {
     height: 331px;
   }
 
-  .swiper__img::after {
+  .galery__swiper-img::after {
     left: 30px;
     bottom: 30px;
   }
@@ -2363,16 +2393,8 @@ button {
     margin-bottom: 49px;
   }
 
-  .accordion__unknow {
-    padding-top: 30px;
-  }
-
   .unknow {
     padding: 33px 15px;
-  }
-
-  .unknow__descr {
-    width: 275px;
   }
 
   .accordion__bottom {
@@ -2380,8 +2402,7 @@ button {
   }
 
   .accordion__pic {
-    width: 251px;
-    height: 165px;
+    width: 41%;
   }
 
   .catalog {
@@ -2389,7 +2410,7 @@ button {
   }
 
   .events__card {
-    width: 315px;
+    padding-bottom: 38%;
   }
 
   .events__photo {
@@ -2422,34 +2443,15 @@ button {
     padding: 0 15px;
   }
 
-  .events__swiper {
-    padding-top: 0;
-  }
-
-
   .swiper-pagination-bullet {
     width: 10px;
     min-height: 10px;
   }
 
-  .swiper__img:hover::after {
+  .galery__swiper-img:hover::after {
     opacity: 1;
     width: 259px;
     height: 274px;
-  }
-
-  .project {
-    margin-bottom: 30px;
-    padding-top: 15px;
-  }
-
-  .project__swiper {
-    padding-top: 29px;
-    margin-bottom: 30px;
-  }
-
-  .project__btn {
-    bottom: 48%;
   }
 
   .project__text {
@@ -2458,11 +2460,20 @@ button {
     margin-bottom: 29px;
   }
 
+  .project__slide {
+    height: 106px;
+  }
+
+  .project__swiper {
+    padding-top: 32px;
+  }
+
   .project__text768 {
     display: none;
   }
 
   .map__top {
+    padding: 48px 50px;
     padding-bottom: 33px;
   }
 
@@ -2498,8 +2509,7 @@ button {
 
 @media (max-width: 425px) {
   .container {
-    max-width: 290px;
-    margin: 0 auto;
+    padding: 0 15px;
   }
 
   .navigation {
@@ -2508,13 +2518,13 @@ button {
   }
 
   .nav-active {
-    min-height: 958px;
+    min-height: 1151px;
     padding-left: 15px;
     padding-bottom: 26px;
   }
 
   .header__list {
-    padding-top: 436px;
+    padding-top: 433px;
     row-gap: 1px;
   }
 
@@ -2686,7 +2696,7 @@ button {
   .about {
     max-width: 425px;
     padding-top: 50px;
-    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .about__title {
@@ -2750,24 +2760,24 @@ button {
   .galery__left {
     display: flex;
     flex-direction: column-reverse;
-    min-height: 467px;
+    min-height: 463px;
   }
 
   .choices__inner:hover {
     width: 278px;
   }
 
-  .swiper__img img {
+  .galery__swiper-img img {
     height: 367px;
   }
 
-  .swiper__img:hover::after {
+  .galery__swiper-img:hover::after {
     opacity: 1;
     width: 259px;
     height: 307px;
   }
 
-  .swiper__img::after {
+  .galery__swiper-img::after {
     left: 15px;
     right: 15px;
   }
@@ -2777,16 +2787,11 @@ button {
     padding-bottom: 24px;
   }
 
-  .catalog__left {
-    width: 290px;
-  }
-
   .tabs-item__small {
     margin-bottom: 15px;
   }
 
   .catalog__right {
-    width: 290px;
     margin-bottom: 52px;
   }
 
@@ -2806,7 +2811,7 @@ button {
   }
 
   .accordion__top {
-    min-height: 71px;
+    min-height: 76px;
   }
 
   .accordion__top svg {
@@ -2818,12 +2823,7 @@ button {
   .accordion__bottom {
     column-count: 1;
     justify-content: space-between;
-    padding: 24px 0;
-  }
-
-  .accordion__unknow {
-    width: 155px;
-    padding: 0;
+    padding: 20px 0;
   }
 
   .unknow {
@@ -2834,6 +2834,7 @@ button {
     width: 155px;
     font-size: 18px;
     line-height: 32px;
+    margin-bottom: 5px;
   }
 
   .unknow__descr {
@@ -2842,10 +2843,9 @@ button {
   }
 
   .accordion__pic {
-    width: 90px;
-    min-height: 118px;
     outline-offset: 5px;
-    margin-right: 0px;
+    margin-right: 31px;
+    min-height: auto;
   }
 
   .accordion__btn {
@@ -2888,8 +2888,6 @@ button {
   }
 
   .events__card {
-    width: 288px;
-    min-height: 542px;
     padding-bottom: 98px;
   }
 
@@ -2923,27 +2921,29 @@ button {
     padding-right: 16px;
   }
 
-  .events__swiper {
-    width: 294px;
-    padding-right: 0;
-  }
+
   .event-swiper-pagination {
-  margin: 27px auto;
+    margin: 20px auto;
   }
+
   .project {
-    max-width: 425px;
-    margin-bottom: 50px;
-    padding-top: 10px;
+    padding-top: 28px;
+    padding-bottom: 18px;
+  }
+
+  .project__swiper {
+
+    padding-top: 14px;
+  }
+
+  .project__slide {
+    height: 100%;
   }
 
   .project__title {
     font-size: 28px;
     line-height: 38px;
     margin-bottom: 12px;
-  }
-
-  .project__slide {
-    height: 67px;
   }
 
   .project__text {
@@ -2958,24 +2958,13 @@ button {
     font-size: 18.3px;
   }
 
-  .project__swiper {
-    max-width: 195px;
-    height: 100px;
-    padding-top: 10px;
-    margin-bottom: -54px;
-  }
-
-  .project__btn {
-    bottom: 47%;
-  }
-
   .map-border {
     display: none;
   }
 
   .map__top {
     border: none;
-    padding: 32px 0;
+    padding: 32px 15px;
     padding-bottom: 13px;
     row-gap: 19px;
   }
@@ -3050,7 +3039,7 @@ button {
   .footer__content {
     flex-direction: column-reverse;
     height: auto;
-    padding-top: 10px;
+    padding-top: 7px;
   }
 
   .footer__messager {

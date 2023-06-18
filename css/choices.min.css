@@ -14,7 +14,7 @@
 }
 
 .choices.is-open {
-    overflow: visible
+    overflow: visible;
 }
 
 .choices.is-disabled .choices__inner,
@@ -142,15 +142,16 @@
 
 .is-focused .choices__inner,
 .is-open .choices__inner {
+  border-radius: 6px;
     border-color: #b7b7b7
 }
 
 .is-open .choices__inner {
-    border-radius: 2.5px 2.5px 0 0
+    border-radius: 6px
 }
 
 .is-flipped.is-open .choices__inner {
-    border-radius: 0 0 2.5px 2.5px
+    border-radius: 6px
 }
 
 .choices__list {
@@ -301,7 +302,8 @@
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted,
 .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
-    background-color: inherit
+  transition: .3s ease;
+    background-color: rgba(255, 255, 255, 0.2)
 }
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted::after,

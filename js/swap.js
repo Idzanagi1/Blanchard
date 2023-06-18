@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         1400: {
           slidesPerView: 3,
-          spaceBetween: 60
+          spaceBetween: 50
         }
       },
 
@@ -67,11 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
     spaceBetween: 50,
 
     breakpoints: {
-      1024: {
+      1025: {
        slidesPerView: 3
       },
       768: {
-        slidesPerView: 2
+        slidesPerView: 2,
+        spaceBetween: 34
       },
       320: {
         slidesPerView: 1,
@@ -93,20 +94,19 @@ document.addEventListener("DOMContentLoaded", () => {
     spaceBetween: 37,
 
     breakpoints: {
-      1920: {
-        spaceBetween: 40,
+      1025: {
+        slidesPerView: 3,
+
+        spaceBetween: 50,
       },
       1024: {
         slidesPerView: 3,
-        spaceBetween: 26,
+        spaceBetween: 27,
       },
       768: {
         slidesPerView: 2,
         spaceBetween: 34,
-      },
-      320: {
-        slidesPerView: 1,
-      },
+      }
     },
 
     navigation: {
