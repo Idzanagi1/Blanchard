@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  min-height: 100vh;
+  min-width: 320px;
 }
 
 *,
@@ -818,8 +818,11 @@ button {
   font-size: 16.5px;
   line-height: 32px;
   color: #ffffff;
+  align-items: flex-start;
 }
-
+.checkbox__custom {
+  cursor: pointer;
+}
 .checkbox__custom:focus .visible-checkbox,
 .checkbox__custom:hover .visible-checkbox,
 .checkbox__custom:active .visible-checkbox {
@@ -924,7 +927,7 @@ button {
   transition: .3s ease;
 }
 
-.galery__swiper-img:hover::after {
+.galery__swiper:hover::after {
   content: '';
   position: absolute;
   text-align: center;
@@ -941,7 +944,7 @@ button {
   z-index: 100;
 }
 
-.galery__swiper-img:active:before {
+.galery__swiper:active:before {
   content: '';
   position: absolute;
   width: auto;
@@ -954,15 +957,16 @@ button {
   animation-name: hoverOn;
   animation-duration: 0.3s;
   background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+  z-index: 9;
 }
 
-.galery__swiper-img:active::before {
+.galery__swiper:active::before {
   opacity: 1;
-  width: 360px;
-  height: 364px;
+  width: 100%;
+  height: 100%;
 }
 
-.galery__swiper-img:hover::after {
+.galery__swiper:hover::after {
   opacity: 1;
 }
 
@@ -2017,13 +2021,13 @@ button {
     height: 315px;
   }
 
-  .galery__swiper-img:hover::after {
+  .galery__swiper:hover::after {
     opacity: 1;
     width: 249px;
     height: 286px;
   }
 
-  .galery__swiper-img::after {
+  .galery__swiper::after {
     left: 15px;
     bottom: 15px;
   }
@@ -2342,7 +2346,7 @@ button {
     height: 331px;
   }
 
-  .galery__swiper-img::after {
+  .galery__swiper::after {
     left: 30px;
     bottom: 30px;
   }
@@ -2413,10 +2417,6 @@ button {
     padding-bottom: 38%;
   }
 
-  .events__photo {
-    height: 200px;
-  }
-
   .events__text {
     padding: 0 17px;
   }
@@ -2448,7 +2448,7 @@ button {
     min-height: 10px;
   }
 
-  .galery__swiper-img:hover::after {
+  .galery__swiper:hover::after {
     opacity: 1;
     width: 259px;
     height: 274px;
@@ -2771,13 +2771,13 @@ button {
     height: 367px;
   }
 
-  .galery__swiper-img:hover::after {
+  .galery__swiper:hover::after {
     opacity: 1;
     width: 259px;
     height: 307px;
   }
 
-  .galery__swiper-img::after {
+  .galery__swiper::after {
     left: 15px;
     right: 15px;
   }
